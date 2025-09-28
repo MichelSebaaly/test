@@ -2,7 +2,7 @@ name: Schedule workflow
 
 on:
   schedule:
-    - cron: "0 14 * * *"
+    - cron: "15 14 * * *"
   workflow_dispatch:
 
 jobs:
@@ -20,3 +20,4 @@ jobs:
 
       - name: Run greeting
         run: node index.js
+        working-directory: src
