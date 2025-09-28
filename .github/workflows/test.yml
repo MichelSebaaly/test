@@ -1,0 +1,22 @@
+name: Schedule workflow
+
+on:
+  schedule:
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+
+jobs:
+  tets-schedule-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: setup nodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.11.0
+
+      - name: Run greeting
+        run: node index.js
